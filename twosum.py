@@ -1,3 +1,7 @@
+"""
+https://leetcode.com/problems/two-sum/submissions/
+"""
+
 # Brute Force
 def twoSumBruteForce(nums, target):
     """
