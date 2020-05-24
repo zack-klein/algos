@@ -4,6 +4,7 @@ https://leetcode.com/problems/linked-list-cycle/submissions/
 They wanted the memory address for this, not the value :(
 """
 
+
 # Memory for this is linear. Can be reduced to constant.
 def hasCycleLinear(self, head):
     """
