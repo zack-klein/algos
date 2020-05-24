@@ -15,6 +15,6 @@ def convertToTitle(n):
     letters = list(string.ascii_uppercase)
     result = ""
     while n != 0:
-        n, r = divmod(n-1,26)
+        n, r = divmod(n - 1, 26)
         result = letters[r] + result
     return result
