@@ -33,6 +33,7 @@ def hasCycleLinear(self, head):
 
 
 # Uses a two-pointer method
+# Looked at the solution for this one
 def hasCycleConstant(self, head):
     """
     :type head: ListNode
