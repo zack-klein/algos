@@ -1,7 +1,6 @@
 """
 https://leetcode.com/problems/reorder-list/submissions/
 """
-import copy
 
 
 def reorderListBruteForce(self, head):
@@ -22,9 +21,7 @@ def reorderListBruteForce(self, head):
         if not node.next:
             building_ht = False
 
-        no_next_copy = copy.copy(node)
-        no_next_copy.copy = None
-        hash_table[pos] = no_next_copy
+        hash_table[pos] = node
 
         node = node.next
         pos += 1
@@ -39,6 +36,7 @@ def reorderListBruteForce(self, head):
         current.next = left_new_pointer
         left_new_pointer.next = None
         counter += 1
+
 
         current = left_new_pointer
         right_new_pointer = hash_table[i + 1]
