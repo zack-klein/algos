@@ -5,9 +5,9 @@ https://leetcode.com/problems/reorder-list/submissions/
 
 def reorderListBruteForce(self, head):
     """
-        :type head: ListNode
-        :rtype: None Do not return anything, modify head in-place instead.
-        """
+    :type head: ListNode
+    :rtype: None Do not return anything, modify head in-place instead.
+    """
     if not head:
         return head
 
@@ -36,7 +36,6 @@ def reorderListBruteForce(self, head):
         current.next = left_new_pointer
         left_new_pointer.next = None
         counter += 1
-
 
         current = left_new_pointer
         right_new_pointer = hash_table[i + 1]
