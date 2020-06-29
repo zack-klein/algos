@@ -2,6 +2,7 @@
 https://leetcode.com/problems/reorder-data-in-log-files/submissions/
 """
 
+
 # Builds two arrays, messes with one, then concats them. Time complexity is
 # n x 2.
 def reorderLogFiles(logs):
