@@ -4,7 +4,6 @@ https://leetcode.com/problems/logger-rate-limiter/
 
 
 class Logger(object):
-
     def __init__(self):
         """
         Initialize your data structure here.
