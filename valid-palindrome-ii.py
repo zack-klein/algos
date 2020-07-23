@@ -1,5 +1,5 @@
 """
-https://leetcode.com/problems/valid-palindrome-ii/submissions/
+https://leetcode.com/problems/valid-palindrome-ii/
 """
 
 
