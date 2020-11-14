@@ -1,5 +1,6 @@
 /**
 Find the two indices in an array where the sum adds up to the target.
+https://leetcode.com/problems/two-sum/submissions/
 
  * @param {number[]} nums
  * @param {number} target
