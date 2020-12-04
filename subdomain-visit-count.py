@@ -3,7 +3,7 @@ https://leetcode.com/problems/subdomain-visit-count/submissions/
 """
 
 
-# This is pretty brute force... Worse case run time is O(n*m^2) where n =
+# This is pretty brute force... Worse case run time is O(n*m) where n =
 # number of elements in cpdomains and m is the maximum number of subdomains.
 def subdomainVisits(cpdomains):
     hash_table = {}
