@@ -38,3 +38,18 @@ def maxProfitOnePass(prices):
             max_profit = val - min_price
 
     return max_profit
+
+
+# Revisiting this one after a long time!
+def maxProfitBF(self, prices):
+    max_profit = 0
+
+    for i, buy in enumerate(prices):
+
+        for sell in prices[i + 1 :]:  # noqa
+            profit = sell - buy
+
+            if profit > max_profit:
+                max_profit = profit
+
+    return max_profit
