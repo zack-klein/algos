@@ -48,3 +48,17 @@ def twoSumOneIteration(nums, target):
             return [hash_table[complement], i]
         else:
             hash_table[num] = i
+
+
+# Just revisiting... one of my favorite problems!
+def twoSum(self, nums, target):
+    ht = {}
+
+    for i, num in enumerate(nums):
+        complement = target - num
+        complement_index = ht.get(complement)
+
+        if complement_index is not None:
+            return (complement_index, i)
+        else:
+            ht[num] = i
