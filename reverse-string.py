@@ -3,7 +3,7 @@ https://leetcode.com/problems/reverse-string/
 """
 
 
-def reverseString(self, s):
+def reverseString(s):
     """
     Do not return anything, modify s in-place instead.
     """
