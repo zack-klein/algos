@@ -10,8 +10,12 @@ Not a leetcode problem, but generally useful tree traversal method.
 # could implement the Queue using a Singly Linked List or Doubly Linked List
 # as well if we needed.
 
+# NOTE: The downside to using Python lists for queue's is that the delete
+# operation takes O(n) time to dequeue. A LL implementation could do so in
+# constant time.
+
 # Assuming we're dealing with a binary tree.
-def bfs(root):
+def bfs_binary_tree(root):
 
     q = []
     root.visited = True
@@ -36,7 +40,30 @@ def bfs(root):
                 q.append(node.right)
 
 
-# Tests
+# General graph BFS (a node can have any number of neighbors). BFS Traversal
+# is done using a queue.
+
+
+def bfs_graph(root):
+
+    q = []
+    root.visited = True
+    q.append(root)
+
+    while q:
+
+        node = q[0]
+        del q[0]
+
+        print(f"Now on node: {node}")
+
+        for neighbor in node.neighbors:
+            if not neighbor.visited:
+                neighbor.visited = True
+                q.append(neighbor)
+
+
+# Binary Tree Test
 #      a
 #    /   \
 #   b     c
@@ -47,7 +74,7 @@ def bfs(root):
 # a, b, c, d, e, f, g
 
 
-class Node:
+class BinaryTreeNode:
     def __init__(self, val, left=None, right=None):
         self.val = val
         self.left = left
@@ -58,20 +85,65 @@ class Node:
         return f"Node({self.val})"
 
 
-g = Node("g")
-f = Node("f")
-c = Node("c")
+g = BinaryTreeNode("g")
+f = BinaryTreeNode("f")
+c = BinaryTreeNode("c")
 c.left = f
 c.right = g
 
-e = Node("e")
-d = Node("d")
-b = Node("b")
+e = BinaryTreeNode("e")
+d = BinaryTreeNode("d")
+b = BinaryTreeNode("b")
 b.left = d
 b.right = e
 
-a = Node("a")
+a = BinaryTreeNode("a")
 a.left = b
 a.right = c
 
-bfs(a)
+print("\nBinary tree BFS:")
+print("-" * 20)
+bfs_binary_tree(a)
+
+
+# Arbitrary graph traversal test
+#   b - e   g       j
+#  /       /       /
+# a - c - f - h - i - k
+#  \               \
+#   d               l
+
+
+class GraphNode:
+    def __init__(self, val):
+        self.val = val
+        self.neighbors = []
+        self.visited = False
+
+    def __repr__(self):
+        return f"Node({self.val})"
+
+
+a = GraphNode("a")
+b = GraphNode("b")
+c = GraphNode("c")
+d = GraphNode("d")
+e = GraphNode("e")
+f = GraphNode("f")
+g = GraphNode("g")
+h = GraphNode("h")
+i = GraphNode("i")
+j = GraphNode("j")
+k = GraphNode("k")
+l = GraphNode("l")  # noqa
+
+i.neighbors += [j, k, l]
+h.neighbors.append(i)
+f.neighbors += [g, h]
+c.neighbors.append(f)
+b.neighbors.append(e)
+a.neighbors += [b, c, d]
+
+print("\n   Graph BFS:")
+print("-" * 20)
+bfs_graph(a)
