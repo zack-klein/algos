@@ -10,7 +10,7 @@ Not a leetcode problem, but generally useful tree traversal method.
 # could implement the Queue using a Singly Linked List or Doubly Linked List
 # as well if we needed.
 
-# NOTE: The downside to using Python lists for queue's is that the delete
+# NOTE: The downside to using Python lists for queues is that the delete
 # operation takes O(n) time to dequeue. A LL implementation could do so in
 # constant time.
 
