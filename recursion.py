@@ -27,7 +27,7 @@ def recursive_threading(node):
 
 
 # And here's the same example using global state. This was easier for me to
-# get at first but I can
+# get at first but I can see why people are not wild about using global state.
 string_of_all_nodes = ""
 
 
