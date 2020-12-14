@@ -15,3 +15,14 @@ def maxDepth(root: TreeNode) -> int:
         return max(l, r) + 1
     else:
         return 0
+
+
+# Exact same solution as above, but revisited a while later!
+def maxDepth2(root):
+
+    if not root:
+        return 0
+    else:
+        L = maxDepth(root.left)
+        R = maxDepth(root.right)
+        return max(L, R) + 1
